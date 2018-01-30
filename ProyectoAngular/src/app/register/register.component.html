@@ -1,0 +1,32 @@
+
+<h1>Register a new foodie account</h1>
+<form [formGroup]="signupForm">
+  <fieldset>
+    <legend>Input your credentials</legend>
+    <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <br />
+      <input type="text" formControlName = "email" id="inputEmail" placeholder="Your email address">
+      <br />
+      
+      <label for="inputUsername">Username</label>
+      <br />
+      <input type="text" formControlName ="username" id="inputUsername" placeholder="Your username">
+      <br />
+
+      <label for="inputPassword">Password</label>
+      <br />
+      <input type="password" formControlName ="password" id="inputPassword" placeholder="Your password">
+      <br />
+
+
+    </div>
+
+  <button type="submit"> Register account </button>
+  </fieldset>
+
+ <!-- <button (click)="saveName(name.value)">Save</button> -->
+</form>
+
+<p>Form value {{ signupForm.value | json }}</p>
+<p> Form status {{ signupForm.status | json }}</p>
