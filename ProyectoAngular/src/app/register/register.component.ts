@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl, Validators, FormGroup } from '@angular/forms';
 import { User } from './../User';
+import { UserAuthService } from '../user-auth.service';
 
 
 
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   // Declaring formgroup.
   signupForm: FormGroup;
 
-  constructor() {}
+  constructor(private authService: UserAuthService) {}
 
   ngOnInit() {
     // Form control instances
@@ -24,6 +25,19 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(),
     email: new FormControl()
     });
+  }
+
+  callRegisterService() {
+    // We pass the form's parameters to the user object.
+    console.log('Username: ' + this.signupForm['username']);
+    this.user.name = this.signupForm['username'];
+    this.user.password = this.signupForm['email'];
+    this.user.email = this.signupForm['email'];
+
+    // We pass the user object to the auth service.
+
+
+
   }
 
 }
